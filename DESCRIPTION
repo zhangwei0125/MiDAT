@@ -1,0 +1,18 @@
+Package: MiDAT
+Title: A microbiome-based direction-assisted test for microbiome differential abundance analyses
+Version: 0.0-1
+Date: 2021-7-15
+Authors@R: 
+    person(given = "Wei",
+           family = "Zhang",
+           role = c("aut", "cre"),
+           email = "zhangwei@amss.ac.cn")
+Description: An implementation of a novel multivariate test for microbiome differential abundance analyses for relative. The test takes the directions of mean difference between groups into account.
+License: GPL-2 | GPL-3
+Imports: MASS
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+
