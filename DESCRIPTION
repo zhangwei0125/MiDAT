@@ -1,6 +1,6 @@
 Package: MiDAT
 Title: A microbiome-based direction-assisted test for microbiome differential abundance analyses.
-Version: 0.1.0.099
+Version: 0.1.0.0
 Authors@R: 
     person(given = "Wei",
            family = "Zhang",
