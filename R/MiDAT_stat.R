@@ -15,7 +15,6 @@
 #' @return A vector containing the MiDAT statistics for all candidate values of lambda.
 #'
 #' @examples
-#' library(mvtnorm)
 #' p = 20
 #' n1 = 100
 #' n2 = 100
@@ -23,11 +22,11 @@
 #' mu2 = mu1 + c(rep(0.5,5), rep(0,p-5))
 #' sigMat1 = diag(p)
 #' rho = 0.5
-#' sigMat2 = rho^(abs(matrix(1:p, nrow=p, ncol=p, byrow=T)-matrix(1:p, nrow=p, ncol=p, byrow=F)))
-#' Z1 = rmvnorm(n1, mean=mu1, sigma=sigMat1); W1 = exp(Z1)
-#' Z2 = rmvnorm(n2, mean=mu2, sigma=sigMat2); W2 = exp(Z2)
-#' X1 = W1/matrix(rowSums(W1), nrow=n1, ncol=p, byrow=F)
-#' X2 = W2/matrix(rowSums(W2), nrow=n2, ncol=p, byrow=F)
+#' sigMat2 = rho^(abs(matrix(1:p, nrow=p, ncol=p, byrow=TRUE)-matrix(1:p, nrow=p, ncol=p, byrow=FALSE)))
+#' Z1 = MASS::mvrnorm(n1, mu=mu1, Sigma=sigMat1); W1 = exp(Z1)
+#' Z2 = MASS::mvrnorm(n2, mu=mu2, Sigma=sigMat2); W2 = exp(Z2)
+#' X1 = W1/matrix(rowSums(W1), nrow=n1, ncol=p, byrow=FALSE)
+#' X2 = W2/matrix(rowSums(W2), nrow=n2, ncol=p, byrow=FALSE)
 #' MiDAT_stat(X1=X1, X2=X2, lambdaSet=c(1,2,3,4,Inf))
 #'
 #' @export
